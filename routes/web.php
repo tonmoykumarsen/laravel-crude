@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\TaskController;
+
 
 Route::get('/', [ContactController::class, 'index'])->name('contacts.index');
 Route::resource('contacts', ContactController::class)->except(['index']);
+
+
+// Task App
+Route::get('task',[TaskController::class,'index'])->name('task.index');
+Route::resource('task',TaskController::class)->except('index');
